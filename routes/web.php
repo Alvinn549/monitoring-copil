@@ -18,7 +18,10 @@ use App\Http\Controllers\KartuMonitoringController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('index');
+})->name('home');
+
 Route::post('/login', [AuthenticationController::class, 'authenticate'])->name('login');
 Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 
