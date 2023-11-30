@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use RealRashid\SweetAlert\Facades\Alert;
+
 use App\Models\KartuMonitoring;
 use Illuminate\Http\Request;
 
@@ -90,6 +92,13 @@ class KartuMonitoringController extends Controller
             'akta' => $validate['akta'],
             'skp_skpd' => $validate['skp_skpd'],
         ]);
+        Alert::toast(
+            '<p style="color: white; margin-top: 10px;">' . $validate['nama_lengkap'] . ' berhasil disimpan</p>',
+            'success'
+        )
+            ->toHtml()
+            ->background('#212529')
+            ->position($position = 'bottom-right');
 
         return redirect()->route('kartu-monitoring.index');
     }

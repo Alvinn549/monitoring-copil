@@ -20,6 +20,8 @@
 </head>
 
 <body class="sb-nav-fixed">
+    @include('sweetalert::alert')
+
     @include('dashboard.layouts.partials.topbar')
     @include('dashboard.layouts.partials.modal-logout')
     <div id="layoutSidenav">
