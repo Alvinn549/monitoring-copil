@@ -84,7 +84,8 @@
                                     </div>
                                     <div class="col">
                                         <input type="text" id="nama_lengkap" name="nama_lengkap"
-                                            class="form-control @error('nama_lengkap') is-invalid @enderror" value="{{ old('nama_lengkap') }}"/>
+                                            class="form-control @error('nama_lengkap') is-invalid @enderror"
+                                            value="{{ old('nama_lengkap') }}" />
                                         @error('no_hp')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -107,7 +108,8 @@
                                     </div>
                                     <div class="col">
                                         <input type="number" name="no_hp"
-                                            class="form-control @error('no_hp') is-invalid @enderror" id="no_hp" value="{{ old('no_hp') }}"/>
+                                            class="form-control @error('no_hp') is-invalid @enderror" id="no_hp"
+                                            value="{{ old('no_hp') }}" />
                                         @error('no_hp')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -132,8 +134,8 @@
                                     </div>
                                     <div class="col">
                                         <input type="number" name="nik_pemohon"
-                                            class="form-control @error('nik_pemohon') is-invalid @enderror"
-                                            id="nik_pemohon" value="{{ old('nik_pemohon') }}"/>
+                                            class="form-control @error('nik_pemohon') is-invalid @enderror" id="nik_pemohon"
+                                            value="{{ old('nik_pemohon') }}" />
                                         @error('nik_pemohon')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -158,8 +160,9 @@
                                         <p>:</p>
                                     </div>
                                     <div class="col">
-                                        <input type="text" name="tempat_lahir" class="form-control @error('tempat_lahir') is-invalid @enderror"
-                                            id="tempat_lahir" value="{{ old('tempat_lahir') }}"/>
+                                        <input type="text" name="tempat_lahir"
+                                            class="form-control @error('tempat_lahir') is-invalid @enderror"
+                                            id="tempat_lahir" value="{{ old('tempat_lahir') }}" />
                                         @error('tempat_lahir')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -173,8 +176,9 @@
                     <div class="col-sm">
                         <div class="row">
                             <div class="col-sm">
-                                <input type="date" name="tanggal_lahir" class="form-control @error('tanggal_lahir') is-invalid @enderror"
-                                    id="tanggal_lahir" value="{{ old('tanggal_lahir') }}"/>
+                                <input type="date" name="tanggal_lahir"
+                                    class="form-control @error('tanggal_lahir') is-invalid @enderror" id="tanggal_lahir"
+                                    value="{{ old('tanggal_lahir') }}" />
                                 @error('tanggal_lahir')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -196,8 +200,9 @@
                                 <p>:</p>
                             </div>
                             <div class="col">
-                                <input type="date" name="tanggal" class="form-control @error('tanggal') is-invalid @enderror"
-                                    id="tanggal" value="{{ old('tanggal') }}"/>
+                                <input type="date" name="tanggal"
+                                    class="form-control @error('tanggal') is-invalid @enderror" id="tanggal"
+                                    value="{{ old('tanggal') }}" />
                                 @error('tanggal')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -217,8 +222,9 @@
                                 <p>:</p>
                             </div>
                             <div class="col">
-                                <input type="number" name="no_antrian" class="form-control @error('no_antrian') is-invalid @enderror"
-                                    id="no_antrian" value="{{ old('no_antrian') }}"/>
+                                <input type="number" name="no_antrian"
+                                    class="form-control @error('no_antrian') is-invalid @enderror" id="no_antrian"
+                                    value="{{ old('no_antrian') }}" />
                                 @error('no_antrian')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -238,8 +244,9 @@
                                 <p>:</p>
                             </div>
                             <div class="col">
-                                <input type="date" name="jadi_tanggal" class="form-control @error('jadi_tanggal') is-invalid @enderror"
-                                    id="jadi_tanggal" value="{{ old('jadi_tanggal') }}"/>
+                                <input type="date" name="jadi_tanggal"
+                                    class="form-control @error('jadi_tanggal') is-invalid @enderror" id="jadi_tanggal"
+                                    value="{{ old('jadi_tanggal') }}" />
                                 @error('jadi_tanggal')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -274,8 +281,9 @@
                                 <p>:</p>
                             </div>
                             <div class="col">
-                                <input type="text" name="rt" class="form-control @error('rt') is-invalid @enderror"
-                                    id="rt" value="{{ old('rt') }}"/>
+                                <input type="text" name="rt"
+                                    class="form-control @error('rt') is-invalid @enderror" id="rt"
+                                    value="{{ old('rt') }}" />
                                 @error('rt')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -297,8 +305,9 @@
                                 <p>:</p>
                             </div>
                             <div class="col">
-                                <input type="text" name="rw" class="form-control @error('rw') is-invalid @enderror"
-                                    id="rw" value="{{ old('rw') }}"/>
+                                <input type="text" name="rw"
+                                    class="form-control @error('rw') is-invalid @enderror" id="rw"
+                                    value="{{ old('rw') }}" />
                                 @error('rw')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -320,8 +329,9 @@
                                 <p class="text-end">:</p>
                             </div>
                             <div class="col">
-                                <input type="text" name="desa" class="form-control @error('desa') is-invalid @enderror"
-                                    id="desa" value="{{ old('desa') }}"/>
+                                <input type="text" name="desa"
+                                    class="form-control @error('desa') is-invalid @enderror" id="desa"
+                                    value="{{ old('desa') }}" />
                                 @error('desa')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -351,8 +361,9 @@
                                         <p>:</p>
                                     </div>
                                     <div class="col">
-                                        <input type="text" name="kecamatan" class="form-control @error('kecamatan') is-invalid @enderror"
-                                            id="kecamatan" value="{{ old('kecamatan') }}"/>
+                                        <input type="text" name="kecamatan"
+                                            class="form-control @error('kecamatan') is-invalid @enderror" id="kecamatan"
+                                            value="{{ old('kecamatan') }}" />
                                         @error('kecamatan')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -383,8 +394,9 @@
                                 <p>:</p>
                             </div>
                             <div class="col">
-                                <input type="number" name="kk" class="form-control @error('kk') is-invalid @enderror"
-                                    id="kk" value="{{ old('kk') }}"/>
+                                <input type="number" name="kk"
+                                    class="form-control @error('kk') is-invalid @enderror" id="kk"
+                                    value="{{ old('kk') }}" />
                                 @error('kk')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -406,8 +418,9 @@
                                 <p>:</p>
                             </div>
                             <div class="col">
-                                <input type="number" name="ktp" class="form-control @error('ktp') is-invalid @enderror"
-                                    id="ktp" value="{{ old('ktp') }}"/>
+                                <input type="number" name="ktp"
+                                    class="form-control @error('ktp') is-invalid @enderror" id="ktp"
+                                    value="{{ old('ktp') }}" />
                                 @error('ktp')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -429,8 +442,9 @@
                                 <p>:</p>
                             </div>
                             <div class="col">
-                                <input type="number" name="akta" class="form-control @error('akta') is-invalid @enderror"
-                                    id="akta" value="{{ old('akta') }}"/>
+                                <input type="number" name="akta"
+                                    class="form-control @error('akta') is-invalid @enderror" id="akta"
+                                    value="{{ old('akta') }}" />
                                 @error('akta')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -452,8 +466,9 @@
                                 <p>:</p>
                             </div>
                             <div class="col">
-                                <input type="number" name="skp_skpd" class="form-control @error('skp_skpd') is-invalid @enderror"
-                                    id="skp_skpd" value="{{ old('skp_skpd') }}"/>
+                                <input type="number" name="skp_skpd"
+                                    class="form-control @error('skp_skpd') is-invalid @enderror" id="skp_skpd"
+                                    value="{{ old('skp_skpd') }}" />
                                 @error('skp_skpd')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -471,6 +486,7 @@
         <table class="table" style="width: 100%" border="1">
             <tbody>
                 <tr>
+                    {{-- 1. Petugas Pelayanan --}}
                     <td rowspan="2">
                         <div class="container mt-3">
                             <div class="row">
@@ -479,105 +495,112 @@
                                 </div>
                             </div>
                             <div class="row mt-2">
-                                <div class="col">
+                                <div class="col-sm-5">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
+                                        <input name="petugas_pelayanan[kk_lama]" class="form-check-input" type="checkbox"
+                                            value="kk_lama" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
+                                            KK Lama
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
+                                        <input name="petugas_pelayanan[photo_berwarna]" class="form-check-input"
+                                            type="checkbox" value="photo_berwarna" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
+                                            Photo Berwarna
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
+                                        <input name="petugas_pelayanan[skp]" class="form-check-input" type="checkbox"
+                                            value="skp" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
+                                            SKP
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
+                                        <input name="petugas_pelayanan[skpd]" class="form-check-input" type="checkbox"
+                                            value="skpd" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
+                                            SKPD
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
+                                        <input name="petugas_pelayanan[fc_surat_nikah]" class="form-check-input"
+                                            type="checkbox" value="fc_surat_nikah" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
+                                            Fc. Surat Nikah
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
+                                        <input name="petugas_pelayanan[fc_kk]" class="form-check-input" type="checkbox"
+                                            value="fc_kk" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
+                                            Fc. KK
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckChecked" checked />
+                                        <input name="petugas_pelayanan[fc_ktp]" class="form-check-input" type="checkbox"
+                                            value="fc_ktp" id="flexCheckChecked" />
                                         <label class="form-check-label" for="flexCheckChecked">
-                                            Checked checkbox
+                                            Fc. KTP
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input name="petugas_pelayanan[fc_akta_kelahiran]" class="form-check-input"
+                                            type="checkbox" value="fc_akta_kelahiran" id="flexCheckDefault" />
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            Fc. Akta Kelahiran
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
+                                        <input name="petugas_pelayanan[f1_01]" class="form-check-input" type="checkbox"
+                                            value="f1_01" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
+                                            F-1.01 <small>(form. Biodata penduduk WNI)</small>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
+                                        <input name="petugas_pelayanan[f1_15]" class="form-check-input" type="checkbox"
+                                            value="f1_15" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
+                                            F-1.15 <small>(KK baru)</small>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
+                                        <input name="petugas_pelayanan[f1_16]" class="form-check-input" type="checkbox"
+                                            value="f1_16" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
+                                            F-1.16 <small>Perubahan KK</small>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
+                                        <input name="petugas_pelayanan[f1_21]" class="form-check-input" type="checkbox"
+                                            value="f1_21" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
+                                            F-1.21 (KTP)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
+                                        <input name="petugas_pelayanan[f2_01]" class="form-check-input" type="checkbox"
+                                            value="f2_01" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
+                                            F-2.01 <small>(Surat Keterangan Kelahiran)</small>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckDefault" />
-                                        <label class="form-check-label" for="flexCheckDefault">
-                                            Default checkbox
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value=""
-                                            id="flexCheckChecked" checked />
+                                        <input name="petugas_pelayanan[f2_29]" class="form-check-input" type="checkbox"
+                                            value="f2_29" id="flexCheckChecked" />
                                         <label class="form-check-label" for="flexCheckChecked">
-                                            Checked checkbox
+                                            F-2.29 <small>(Surat Ket. Kematian)</small>
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input name="petugas_pelayanan[f2_38]" class="form-check-input" type="checkbox"
+                                            value="f2_38" id="flexCheckChecked" />
+                                        <label class="form-check-label" for="flexCheckChecked">
+                                            F-2.38 <small>(Pengakuan Anak)</small>
                                         </label>
                                     </div>
                                 </div>
@@ -585,9 +608,9 @@
                             <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="nama_pl" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -595,17 +618,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_pelayanan[nama]" type="text"
+                                                        class="form-control " id="petugas_pelayanan[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="tanggal" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row d-flex">
@@ -613,17 +635,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_pelayanan[tanggal]" type="date"
+                                                        class="form-control " id="petugas_pelayanan[tanggal]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -631,17 +652,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_pelayanan[jam_masuk]" type="time"
+                                                        class="form-control " id="petugas_pelayanan[tanggal]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -649,9 +669,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_pelayanan[jam_keluar]" type="time"
+                                                        class="form-control " id="hp" />
                                                 </div>
                                             </div>
                                         </div>
@@ -660,19 +679,20 @@
                             </div>
                         </div>
                     </td>
+                    {{-- 6. Operator Komputer : KTP --}}
                     <td>
                         <div class="container mt-3">
                             <div class="row">
                                 <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
+                                    <strong>6. OPERATOR KOMPUTER : KTP</strong>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="nama-opk-ktp" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -680,17 +700,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_ktp[nama]" type="text" class="form-control "
+                                                        id="opk_ktp[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="hari-tgl-opk-ktp" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -698,17 +717,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_ktp[tanggal]" type="date" class="form-control "
+                                                        id="opk_ktp[hari_tgl]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -716,17 +734,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_ktp[jam_masuk]" type="time" class="form-control "
+                                                        id="opk_ktp[jam_masuk]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -734,9 +751,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_ktp[jam_keluar]" type="time"
+                                                        class="form-control " id="opk_ktp[jam_keluar]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -747,19 +763,20 @@
                     </td>
                 </tr>
                 <tr>
+                    {{-- 7. Operator Komputer : Akta --}}
                     <td>
                         <div class="container mt-3">
                             <div class="row">
                                 <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
+                                    <strong>7. OPERATOR KOMPUTER : AKTA</strong>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="nama-opk-akta" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -767,17 +784,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_akta[nama]" type="text" class="form-control "
+                                                        id="opk_akta[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="hari-tgl-opk-akta" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -785,17 +801,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_akta[tanggal]" type="date" class="form-control "
+                                                        id="opk_akta[hari_tgl]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -803,17 +818,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_akta[jam_masuk]" type="time"
+                                                        class="form-control " id="opk_akta[jam_masuk]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -821,9 +835,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_akta[jam_keluar]" type="time"
+                                                        class="form-control " id="opk_akta[jam_keluar]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -834,19 +847,20 @@
                     </td>
                 </tr>
                 <tr>
+                    {{-- 2. KASIR --}}
                     <td>
                         <div class="container mt-3">
                             <div class="row">
                                 <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
+                                    <strong>2. KASIR</strong>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="kasir" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -854,17 +868,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="kasir[nama]" type="text" class="form-control "
+                                                        id="kasir[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="hari-tgl-opk-ktp" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -872,17 +885,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="kasir[tanggal]" type="date" class="form-control "
+                                                        id="kasir[hari_tgl]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -890,17 +902,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="kasir[jam_masuk]" type="time" class="form-control "
+                                                        id="kasir[jam_masuk]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -908,9 +919,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="kasir[jam_keluar]" type="time" class="form-control "
+                                                        id="kasir[jam_keluar]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -919,19 +929,20 @@
                             </div>
                         </div>
                     </td>
+                    {{-- 8. OPERATOR KOMPUTER : SKP / SKPD --}}
                     <td>
                         <div class="container mt-3">
                             <div class="row">
                                 <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
+                                    <strong>8. OPERATOR KOMPUTER : SKP / SKPD</strong>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="opk_skp_skpd" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -939,17 +950,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_skp_skpd[nama]" type="text" class="form-control "
+                                                        id="opk_skp_skpd[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="hari-tgl-opk-skp_skpd" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -957,17 +967,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_skp_skpd[tanggal]" type="date"
+                                                        class="form-control " id="opk_skp_skpd[hari_tgl]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -975,17 +984,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_skp_skpd[jam_masuk]" type="time"
+                                                        class="form-control " id="opk_skp_skpd[jam_masuk]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -993,9 +1001,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_skp_skpd[jam_keluar]" type="time"
+                                                        class="form-control " id="opk_skp_skpd[jam_keluar]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1006,19 +1013,20 @@
                     </td>
                 </tr>
                 <tr>
+                    {{-- 3. PENCATAT BUKU REGESTER --}}
                     <td>
                         <div class="container mt-3">
                             <div class="row">
                                 <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
+                                    <strong>3. PENCATAT BUKU REGESTER</strong>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="pencatat_buku_regester" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1026,17 +1034,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="pencatat_buku_regester[nama]" type="text"
+                                                        class="form-control " id="pencatat_buku_regester[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="hari-tgl-opk-ktp" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1044,17 +1051,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="pencatat_buku_regester[tanggal]" type="date"
+                                                        class="form-control " id="pencatat_buku_regester[hari_tgl]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1062,17 +1068,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="pencatat_buku_regester[jam_masuk]" type="time"
+                                                        class="form-control " id="pencatat_buku_regester[jam_masuk]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1080,9 +1085,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="pencatat_buku_regester[jam_keluar]" type="time"
+                                                        class="form-control " id="pencatat_buku_regester[jam_keluar]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1091,19 +1095,20 @@
                             </div>
                         </div>
                     </td>
+                    {{-- 9. SUPERVISOR DOKUMEN / KASI --}}
                     <td>
                         <div class="container mt-3">
                             <div class="row">
                                 <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
+                                    <strong>9. SUPERVISOR DOKUMEN / KASI</strong>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="supervisor_dokumen_kasi" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1111,17 +1116,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="spv_dokumen_kasi[nama]" type="text"
+                                                        class="form-control " id="spv_dokumen_kasi[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="hari-tgl-opk-ktp" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1129,17 +1133,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="spv_dokumen_kasi[tanggal]" type="date"
+                                                        class="form-control " id="spv_dokumen_kasi[hari_tgl]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1147,17 +1150,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="spv_dokumen_kasi[jam_masuk]" type="time"
+                                                        class="form-control " id="spv_dokumen_kasi[jam_masuk]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1165,9 +1167,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="spv_dokumen_kasi[jam_keluar]" type="time"
+                                                        class="form-control " id="spv_dokumen_kasi[jam_keluar]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1178,19 +1179,20 @@
                     </td>
                 </tr>
                 <tr>
+                    {{-- 4. SUPERVISOR BERKAS / KASI --}}
                     <td>
                         <div class="container mt-3">
                             <div class="row">
                                 <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
+                                    <strong>4. SUPERVISOR BERKAS / KASI</strong>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="supervisor_berkas_kasi" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1198,17 +1200,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="spv_berkas_kasi[nama]" type="text"
+                                                        class="form-control " id="spv_berkas_kasi[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="hari-tgl-opk-ktp" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1216,17 +1217,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="spv_berkas_kasi[tanggal]" type="date"
+                                                        class="form-control " id="spv_berkas_kasi[hari_tgl]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1234,17 +1234,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="spv_berkas_kasi[jam_masuk]" type="time"
+                                                        class="form-control " id="spv_berkas_kasi[jam_masuk]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1252,9 +1251,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="spv_berkas_kasi[jam_keluar]" type="time"
+                                                        class="form-control " id="spv_berkas_kasi[jam_keluar]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1263,19 +1261,20 @@
                             </div>
                         </div>
                     </td>
+                    {{-- 10. PETUGAS DISTRIBUSI --}}
                     <td>
                         <div class="container mt-3">
                             <div class="row">
                                 <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
+                                    <strong>10. PETUGAS DISTRIBUSI</strong>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="petugas_distribusi" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1283,17 +1282,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_distribusi[nama]" type="text"
+                                                        class="form-control " id="petugas_distribusi[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="hari-tgl-opk-ktp" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1301,17 +1299,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_distribusi[tanggal]" type="date"
+                                                        class="form-control " id="petugas_distribusi[hari_tgl]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1319,17 +1316,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_distribusi[jam_masuk]" type="time"
+                                                        class="form-control " id="petugas_distribusi[jam_masuk]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1337,9 +1333,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_distribusi[jam_keluar]" type="time"
+                                                        class="form-control " id="petugas_distribusi[jam_keluar]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1350,19 +1345,20 @@
                     </td>
                 </tr>
                 <tr>
+                    {{-- 5. OPERATOR KOMPUTER : KK --}}
                     <td>
                         <div class="container mt-3">
                             <div class="row">
                                 <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
+                                    <strong>5. OPERATOR KOMPUTER : KK</strong>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="opk_kk" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1370,17 +1366,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_kk[nama]" type="text" class="form-control "
+                                                        id="opk_kk[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="hari-tgl-opk-ktp" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1388,17 +1383,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_kk[tanggal]" type="date" class="form-control "
+                                                        id="opk_kk[hari_tgl]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1406,17 +1400,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_kk[jam_masuk]" type="time" class="form-control "
+                                                        id="opk_kk[jam_masuk]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1424,9 +1417,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="opk_kk[jam_keluar]" type="time" class="form-control "
+                                                        id="opk_kk[jam_keluar]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1435,19 +1427,20 @@
                             </div>
                         </div>
                     </td>
+                    {{-- 11. PEMOHON --}}
                     <td>
                         <div class="container mt-3">
                             <div class="row">
                                 <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
+                                    <strong>11. PEMOHON</strong>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="pemohon" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1455,17 +1448,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="pemohon[nama]" type="text" class="form-control "
+                                                        id="pemohon[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="hari-tgl-opk-ktp" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1473,17 +1465,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="pemohon[tanggal]" type="date" class="form-control "
+                                                        id="pemohon[hari_tgl]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1491,17 +1482,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="pemohon[jam_masuk]" type="time" class="form-control "
+                                                        id="pemohon[jam_masuk]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1509,9 +1499,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="pemohon[jam_keluar]" type="time"
+                                                        class="form-control " id="pemohon[jam_keluar]" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1522,372 +1511,31 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <div class="container mt-3">
-                            <div class="row">
-                                <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="container mt-3">
-                            <div class="row">
-                                <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="container mt-3">
-                            <div class="row">
-                                <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="container mt-3">
-                            <div class="row">
-                                <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
-                                        </div>
-                                        <div class="col-sm">
-                                            <div class="row">
-                                                <div class="col-sm-1 col-form-label">
-                                                    <p>:</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
+                    {{-- CATATAN PENTING --}}
                     <td>
                         <div class="container">
                             <div class="row mt-3">
                                 <div class="col">
                                     <strong>CATATAN PENTING</strong>
+                                    <textarea name="catatan_penting" rows="9" class="form-control mt-3" placeholder="Masukkan catatan penting"></textarea>
                                 </div>
                             </div>
                         </div>
                     </td>
+                    {{-- 12. PETUGAS ARSIP --}}
                     <td>
                         <div class="container mt-3">
                             <div class="row">
                                 <div class="col">
-                                    <strong>6. OPERATOR KOMPUTER : SKP / SKPD</strong>
+                                    <strong>12. PETUGAS ARSIP</strong>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col">
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="petugas_arsip" class="col-form-label">
+                                                Nama</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1895,17 +1543,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_arsip[nama]" type="text"
+                                                        class="form-control " id="petugas_arsip[nama]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
-                                            <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                        <div class="col-sm-4">
+                                            <label for="hari-tgl-opk-ktp" class="col-form-label">
+                                                Hari / Tanggal</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1913,17 +1560,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_arsip[tanggal]" type="date"
+                                                        class="form-control " id="petugas_arsip[hari_tgl]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Masuk Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1931,17 +1577,16 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_arsip[jam_masuk]" type="time"
+                                                        class="form-control " id="petugas_arsip[jam_masuk]" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-4">
                                             <label for="hp" class="col-form-label">
-                                                SKP/SKPD</label>
+                                                Berkas Selesai Jam</label>
                                         </div>
                                         <div class="col-sm">
                                             <div class="row">
@@ -1949,9 +1594,8 @@
                                                     <p>:</p>
                                                 </div>
                                                 <div class="col">
-                                                    <input type="text"
-                                                        class="form-control @error('') is-invalid @enderror"
-                                                        id="hp" />
+                                                    <input name="petugas_arsip[jam_keluar]" type="time"
+                                                        class="form-control " id="petugas_arsip[jam_keluar]" />
                                                 </div>
                                             </div>
                                         </div>

@@ -39,7 +39,89 @@ class KartuMonitoringController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        // dd($request->catatan_penting);
+        if (
+            collect($request->input('petugas_pelayanan'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada petugas_pelayanan';
+        } elseif (
+            collect($request->input('opk_ktp'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada opk_ktp';
+        } elseif (
+            collect($request->input('opk_akta'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada opk_akta';
+        } elseif (
+            collect($request->input('kasir'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada kasir';
+        } elseif (
+            collect($request->input('opk_skp_skpd'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada opk_skp_skpd';
+        } elseif (
+            collect($request->input('pencatat_buku_regester'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada pencatat_buku_regester';
+        } elseif (
+            collect($request->input('spv_dokumen_kasi'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada spv_dokumen_kasi';
+        } elseif (
+            collect($request->input('spv_berkas_kasi'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada spv_berkas_kasi';
+        } elseif (
+            collect($request->input('petugas_distribusi'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada petugas_distribusi';
+        } elseif (
+            collect($request->input('opk_kk'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada opk_kk';
+        } elseif (
+            collect($request->input('pemohon'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada pemohon';
+        } elseif (
+            collect($request->input('catatan_penting'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada catatan_penting';
+        } elseif (
+            collect($request->input('petugas_arsip'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            return 'ada petugas_arsip';
+        } else {
+            return 'kosong';
+        }
+
         $validate = $request->validate([
             'nama_lengkap' => 'required',
             'no_hp' => 'required',
@@ -58,9 +140,6 @@ class KartuMonitoringController extends Controller
             'akta' => 'required',
             'skp_skpd' => 'required',
         ]);
-
-        // dd($validate);
-        // dd($validate['no_hp']);
 
         $alamat = [
             'rt' => $validate['rt'],
@@ -92,6 +171,7 @@ class KartuMonitoringController extends Controller
             'akta' => $validate['akta'],
             'skp_skpd' => $validate['skp_skpd'],
         ]);
+
         Alert::toast(
             '<p style="color: white; margin-top: 10px;">' . $validate['nama_lengkap'] . ' berhasil disimpan</p>',
             'success'

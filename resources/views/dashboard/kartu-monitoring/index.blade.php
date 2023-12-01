@@ -25,7 +25,7 @@
                         <th>Alamat</th>
                         <th>Tanggal</th>
                         <th>No Antrian</th>
-                        <th>aksi</th>
+                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -37,6 +37,7 @@
                         <th>Alamat</th>
                         <th>Tanggal</th>
                         <th>No Antrian</th>
+                        <th>Aksi</th>
                     </tr>
                 </tfoot>
                 <tbody>
