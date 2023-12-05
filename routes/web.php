@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KartuMonitoringController;
 use App\Http\Controllers\ExportToExcelController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,11 @@ Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logou
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::resource('kartu-monitoring', KartuMonitoringController::class);
-Route::get('/export-excel/kartu-monitoring', [ExportToExcelController::class, 'exportKartuMonitoringToExcel'])->name(
-    'kartu-monitoring.export-excel'
+Route::get('/export-excel/kartu-monitorings', [ExportToExcelController::class, 'exportKartuMonitoringToExcel'])->name(
+    'kartu-monitorings.export-excel'
+);
+
+Route::resource('users', UserController::class);
+Route::get('/export-excel/users', [ExportToExcelController::class, 'exportKartuMonitoringToExcel'])->name(
+    'users.export-excel'
 );

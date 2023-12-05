@@ -1,60 +1,53 @@
 @extends('dashboard.layouts.main')
 
 @section('content')
-    <h1 class="mt-4">Kartu Monitoring</h1>
+    <h1 class="mt-4">User</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Dashboard</li>
-        <li class="breadcrumb-item active">Kartu Monitoring</li>
+        <li class="breadcrumb-item active">User</li>
     </ol>
 
-    <a href="{{ route('kartu-monitoring.create') }}" class="btn btn-primary mb-4">Tambah Data</a>
-    <a href="{{ route('kartu-monitorings.export-excel') }}" class="btn btn-success mb-4">Export to Excel</a>
+    <a href="{{ route('users.create') }}" class="btn btn-primary mb-4">Tambah Data</a>
+    <a href="{{ route('users.export-excel') }}" class="btn btn-success mb-4">Export to Excel</a>
 
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            Data Kartu Monitoring
+            Data Users
         </div>
         <div class="card-body">
-            <table id="kartuMonitoringTable">
+            <table id="usersTable">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Nama Lengkap</th>
-                        <th>Nik Pemohon</th>
+                        <th>Nama</th>
+                        <th>Email</th>
                         <th>No Hp</th>
                         <th>Alamat</th>
-                        <th>Tanggal</th>
-                        <th>No Antrian</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>#</th>
-                        <th>Nama Lengkap</th>
-                        <th>Nik Pemohon</th>
+                        <th>Nama</th>
+                        <th>Email</th>
                         <th>No Hp</th>
                         <th>Alamat</th>
-                        <th>Tanggal</th>
-                        <th>No Antrian</th>
                         <th>Aksi</th>
                     </tr>
                 </tfoot>
                 <tbody>
-                    @forelse ($kartuMonitorings as $item)
+                    @forelse ($users as $item)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
-                            <td>{{ $item->nama_lengkap }}</td>
-                            <td>{{ $item->nik_pemohon }}</td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->email }}</td>
                             <td>{{ $item->no_hp }}</td>
                             <td>{{ $item->alamat }}</td>
-                            <td>{{ $item->tanggal }}</td>
-                            <td>{{ $item->no_antrian }}</td>
                             <td>
-                                <a href="{{ route('kartu-monitoring.edit', $item->id) }}"
-                                    class="btn btn-warning btn-sm">Edit</a>
-                                <form action="{{ route('kartu-monitoring.destroy', $item->id) }}" method="POST"
+                                <a href="{{ route('users.edit', $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{ route('users.destroy', $item->id) }}" method="POST"
                                     style="display: inline;">
                                     @csrf
                                     @method('DELETE')
@@ -73,5 +66,5 @@
 
 @section('js')
     <script src="{{ asset('assets/js/simple-datatables.min.js') }}"></script>
-    <script src="{{ asset('assets/js/kartu-monitoring-data-table.js') }}"></script>
+    <script src="{{ asset('assets/js/users-data-table.js') }}"></script>
 @endsection
