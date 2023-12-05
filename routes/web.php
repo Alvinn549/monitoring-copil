@@ -33,6 +33,4 @@ Route::get('/export-excel/kartu-monitorings', [ExportToExcelController::class, '
 );
 
 Route::resource('users', UserController::class);
-Route::get('/export-excel/users', [ExportToExcelController::class, 'exportKartuMonitoringToExcel'])->name(
-    'users.export-excel'
-);
+Route::get('/export-excel/users', [ExportToExcelController::class, 'exportUsersToExcel'])->name('users.export-excel');
