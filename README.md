@@ -20,7 +20,7 @@ To deploy this project
 1. **Clone Repository**
 
 ```bash
-  git clone https://github.com/Alvinn549/monitoring-copil
+  git clone https://github.com/Alvinn549/monitoring-copil.git
   cd monitoring-copil
   composer install
 ```
