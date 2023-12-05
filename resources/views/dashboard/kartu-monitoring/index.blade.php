@@ -1,14 +1,15 @@
 @extends('dashboard.layouts.main')
 
 @section('content')
-    <h1 class="mt-4">Kartu Monitorinng</h1>
+    <h1 class="mt-4">Kartu Monitoring</h1>
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item active">Dashboard</li>
-        <li class="breadcrumb-item active">Kartu Monitorinng</li>
+        <li class="breadcrumb-item active">Kartu Monitoring</li>
     </ol>
 
     <a href="{{ route('kartu-monitoring.create') }}" class="btn btn-primary mb-4">Tambah Data</a>
-
+    <a href="{{ route('kartu-monitoring.export-excel') }}" class="btn btn-success mb-4">Export to Excel</a>
+    
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
@@ -52,6 +53,11 @@
                             <td>{{ $item->no_antrian }}</td>
                             <td>
                                 <a href="{{ route('kartu-monitoring.edit', $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                <form action="{{ route('kartu-monitoring.destroy', $item->id) }}" method="POST" style="display: inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this data?')">Delete</button>
+                                </form>
                             </td>
                         </tr>
                     @empty
