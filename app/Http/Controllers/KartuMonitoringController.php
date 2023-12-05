@@ -423,11 +423,7 @@ class KartuMonitoringController extends Controller
         ) {
             $petugasPelayananData = $request->input('petugas_pelayanan');
 
-            // dd($petugasPelayananData);
-
             $kartuMonitoring->petugas_pelayanan->update($petugasPelayananData);
-
-            // dd($createPetugasPelayanan);
         }
 
         if (
@@ -437,7 +433,6 @@ class KartuMonitoringController extends Controller
         ) {
             $opkKtpData = $request->input('opk_ktp');
 
-            // dd($opkKtpData);
             $kartuMonitoring->operator_komputer_ktp->update($opkKtpData);
         }
 
@@ -447,8 +442,6 @@ class KartuMonitoringController extends Controller
                 ->isNotEmpty()
         ) {
             $opkAktaData = $request->input('opk_akta');
-
-            // dd($opkAkta);
 
             $kartuMonitoring->operator_komputer_akta->update($opkAktaData);
         }
@@ -460,8 +453,6 @@ class KartuMonitoringController extends Controller
         ) {
             $kasirData = $request->input('kasir');
 
-            // dd($opkAkta);
-
             $kartuMonitoring->kasir->update($kasirData);
         }
 
@@ -471,8 +462,6 @@ class KartuMonitoringController extends Controller
                 ->isNotEmpty()
         ) {
             $opkSkpSkpdData = $request->input('opk_skp_skpd');
-
-            // dd($opkAkta);
 
             $kartuMonitoring->operator_komputer_skp_skpd->update($opkSkpSkpdData);
         }
@@ -484,8 +473,6 @@ class KartuMonitoringController extends Controller
         ) {
             $pencatatBukuRegesterData = $request->input('pencatat_buku_regester');
 
-            // dd($opkAkta);
-
             $kartuMonitoring->pencatat_buku_regester->update($pencatatBukuRegesterData);
         }
 
@@ -495,8 +482,6 @@ class KartuMonitoringController extends Controller
                 ->isNotEmpty()
         ) {
             $supervisorDokumenKasiData = $request->input('spv_dokumen_kasi');
-
-            // dd($opkAkta);
 
             $kartuMonitoring->supervisor_dokumen_kasi->update($supervisorDokumenKasiData);
         }
@@ -508,8 +493,6 @@ class KartuMonitoringController extends Controller
         ) {
             $supervisorBerkasKasiData = $request->input('spv_berkas_kasi');
 
-            // dd($opkAkta);
-
             $kartuMonitoring->supervisor_berkas_kasi->update($supervisorBerkasKasiData);
         }
 
@@ -519,8 +502,6 @@ class KartuMonitoringController extends Controller
                 ->isNotEmpty()
         ) {
             $petugasDistribusiData = $request->input('petugas_distribusi');
-
-            // dd($opkAkta);
 
             $kartuMonitoring->petugas_distribusi->update($petugasDistribusiData);
         }
@@ -532,8 +513,6 @@ class KartuMonitoringController extends Controller
         ) {
             $opkKkData = $request->input('opk_kk');
 
-            // dd($opkAkta);
-
             $kartuMonitoring->operator_komputer_kk->update($opkKkData);
         }
 
@@ -543,8 +522,6 @@ class KartuMonitoringController extends Controller
                 ->isNotEmpty()
         ) {
             $pemohonData = $request->input('pemohon');
-
-            // dd($opkAkta);
 
             $kartuMonitoring->pemohon->update($pemohonData);
         }
@@ -556,8 +533,6 @@ class KartuMonitoringController extends Controller
         ) {
             $catatanPentingData = $request->input('catatan_penting');
 
-            // dd($catatanPentingData);
-
             $kartuMonitoring->catatan_penting->update($catatanPentingData);
         }
 
@@ -567,8 +542,6 @@ class KartuMonitoringController extends Controller
                 ->isNotEmpty()
         ) {
             $petugasArsipData = $request->input('petugas_arsip');
-
-            // dd($petugasArsipData);
 
             $kartuMonitoring->petugas_arsip->update($petugasArsipData);
         }
@@ -592,6 +565,30 @@ class KartuMonitoringController extends Controller
      */
     public function destroy(KartuMonitoring $kartuMonitoring)
     {
-        //
+        $kartuMonitoring->petugas_pelayanan()->delete();
+        $kartuMonitoring->kasir()->delete();
+        $kartuMonitoring->pencatat_buku_regester()->delete();
+        $kartuMonitoring->supervisor_dokumen_kasi()->delete();
+        $kartuMonitoring->supervisor_berkas_kasi()->delete();
+        $kartuMonitoring->petugas_distribusi()->delete();
+        $kartuMonitoring->operator_komputer_kk()->delete();
+        $kartuMonitoring->operator_komputer_ktp()->delete();
+        $kartuMonitoring->operator_komputer_akta()->delete();
+        $kartuMonitoring->operator_komputer_skp_skpd()->delete();
+        $kartuMonitoring->pemohon()->delete();
+        $kartuMonitoring->catatan_penting()->delete();
+        $kartuMonitoring->petugas_arsip()->delete();
+
+        $kartuMonitoring->delete();
+
+        Alert::toast(
+            '<p style="color: white; margin-top: 10px;">' . $kartuMonitoring->nama_lengkap . ' berhasil di hapus</p>',
+            'success'
+        )
+            ->toHtml()
+            ->background('#212529')
+            ->position($position = 'bottom-right');
+
+        return redirect()->route('kartu-monitoring.index');
     }
 }
