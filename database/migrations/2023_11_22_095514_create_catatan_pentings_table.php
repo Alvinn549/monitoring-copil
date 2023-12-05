@@ -15,6 +15,7 @@ class CreateCatatanPentingsTable extends Migration
     {
         Schema::create('catatan_pentings', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('kartu_monitoring_id');
             $table->text('isi')->nullable();
             $table->timestamps();
         });

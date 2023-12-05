@@ -9,11 +9,10 @@ class OperatorKomputerSkpSkpd extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["nama","tanggal","jam_masuk","jam_keluar"];
+    protected $fillable = ['kartu_monitoring_id', 'nama', 'tanggal', 'jam_masuk', 'jam_keluar'];
 
     public function kartu_monitoring()
-{
-    return $this->belongsTo(KartuMonitoring::class);
-}
-
+    {
+        return $this->belongsTo(KartuMonitoring::class);
+    }
 }

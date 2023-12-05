@@ -15,10 +15,11 @@ class CreateKasirsTable extends Migration
     {
         Schema::create('kasirs', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-$table->date('tanggal');
-$table->datetime('jam_masuk');
-$table->datetime('jam_keluar')->nullable();
+            $table->foreignId('kartu_monitoring_id');
+            $table->string('nama')->nullable();
+            $table->date('tanggal')->nullable();
+            $table->time('jam_masuk')->nullable();
+            $table->time('jam_keluar')->nullable();
             $table->timestamps();
         });
     }

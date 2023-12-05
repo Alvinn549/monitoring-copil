@@ -24,7 +24,7 @@ class CreateKartuMonitoringsTable extends Migration
             $table->bigInteger('ktp');
             $table->bigInteger('akta');
             $table->bigInteger('skp_skpd');
-            $table->date('tanggal');
+            $table->date('tanggal')->nullable();
             $table->bigInteger('no_antrian');
             $table->date('jadi_tanggal');
             $table->timestamps();

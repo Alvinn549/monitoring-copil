@@ -31,22 +31,25 @@
         }
 
          .btn-circle {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        text-align: center;
-        padding: 12px 0; /* Adjust the padding as needed */
-    }
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            padding: 12px 0;
+            /* Adjust the padding as needed */
+        }
 
-    .floating-btn {
-        position: fixed;
-        bottom: 20px; /* Adjust the distance from the bottom */
-        padding: 10px;
-    }
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            /* Adjust the distance from the bottom */
+            padding: 10px;
+        }
 
-    .bottom-right {
-        right: 20px; /* Adjust the distance from the right */
-    }
+        .bottom-right {
+            right: 20px;
+            /* Adjust the distance from the right */
+        }
     </style>
 @endsection
 
@@ -55,22 +58,18 @@
     <ol class="breadcrumb mb-4">
         <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
         <li class="breadcrumb-item"><a href="{{ route('kartu-monitoring.index') }}">Kartu Monitoring<Main></Main></a></li>
-        <li class="breadcrumb-item active">Tambah</li>
+        <li class="breadcrumb-item active">Edit</li>
     </ol>
 
-    <form id="kartuMonitoringForm" action="{{ route('kartu-monitoring.store') }}" method="post" class="custom-border mb-4"
+    <form id="kartuMonitoringForm" action="{{ route('kartu-monitoring.update', $kartuMonitoring->id) }}" method="POST" class="custom-border mb-4"
         onsubmit="return confirmSubmission()">
         @csrf
-       <div class="position-fixed floating-btn bottom-right">
-    <div class="btn-group">
-        <button class="btn btn-danger btn-circle" type="button" onclick="confirmReset()">
-            <i class="fas fa-undo"></i> <!-- FontAwesome undo icon -->
-        </button>
-        <button class="btn btn-success btn-circle" type="submit">
-            <i class="fas fa-save"></i> <!-- FontAwesome save icon -->
-        </button>
-    </div>
-</div>
+        @method('PUT')
+        <div class="position-fixed floating-btn bottom-right">
+            <button class="btn btn-success btn-circle" type="submit">
+                <i class="fas fa-save"></i>
+            </button>
+        </div>
 
         <!-- Kop -->
         <div class="row mt-3">
@@ -104,7 +103,7 @@
                                     <div class="col">
                                         <input type="text" id="nama_lengkap" name="nama_lengkap"
                                             class="form-control @error('nama_lengkap') is-invalid @enderror"
-                                            value="{{ old('nama_lengkap') }}" />
+                                            value="{{ $kartuMonitoring->nama_lengkap }}" />
                                         @error('no_hp')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -128,7 +127,7 @@
                                     <div class="col">
                                         <input type="number" name="no_hp"
                                             class="form-control @error('no_hp') is-invalid @enderror" id="no_hp"
-                                            value="{{ old('no_hp') }}" />
+                                            value="{{ $kartuMonitoring->no_hp }}" />
                                         @error('no_hp')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -154,7 +153,7 @@
                                     <div class="col">
                                         <input type="number" name="nik_pemohon"
                                             class="form-control @error('nik_pemohon') is-invalid @enderror" id="nik_pemohon"
-                                            value="{{ old('nik_pemohon') }}" />
+                                            value="{{ $kartuMonitoring->nik_pemohon }}" />
                                         @error('nik_pemohon')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -181,7 +180,7 @@
                                     <div class="col">
                                         <input type="text" name="tempat_lahir"
                                             class="form-control @error('tempat_lahir') is-invalid @enderror"
-                                            id="tempat_lahir" value="{{ old('tempat_lahir') }}" />
+                                            id="tempat_lahir" value="{{ $tempatLahir }}" />
                                         @error('tempat_lahir')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -197,7 +196,7 @@
                             <div class="col-sm">
                                 <input type="date" name="tanggal_lahir"
                                     class="form-control @error('tanggal_lahir') is-invalid @enderror" id="tanggal_lahir"
-                                    value="{{ old('tanggal_lahir') }}" />
+                                    value="{{ $tanggalLahir }}" />
                                 @error('tanggal_lahir')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -221,7 +220,7 @@
                             <div class="col">
                                 <input type="date" name="tanggal"
                                     class="form-control @error('tanggal') is-invalid @enderror" id="tanggal"
-                                    value="{{ old('tanggal') }}" />
+                                    value="{{ $kartuMonitoring->tanggal }}" />
                                 @error('tanggal')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -243,7 +242,7 @@
                             <div class="col">
                                 <input type="number" name="no_antrian"
                                     class="form-control @error('no_antrian') is-invalid @enderror" id="no_antrian"
-                                    value="{{ old('no_antrian') }}" />
+                                    value="{{ $kartuMonitoring->no_antrian }}" />
                                 @error('no_antrian')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -265,7 +264,7 @@
                             <div class="col">
                                 <input type="date" name="jadi_tanggal"
                                     class="form-control @error('jadi_tanggal') is-invalid @enderror" id="jadi_tanggal"
-                                    value="{{ old('jadi_tanggal') }}" />
+                                    value="{{ $kartuMonitoring->jadi_tanggal }}" />
                                 @error('jadi_tanggal')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -302,7 +301,7 @@
                             <div class="col">
                                 <input type="number" name="rt"
                                     class="form-control @error('rt') is-invalid @enderror" id="rt"
-                                    value="{{ old('rt') }}" />
+                                    value="{{ $rt }}" />
                                 @error('rt')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -326,7 +325,7 @@
                             <div class="col">
                                 <input type="number" name="rw"
                                     class="form-control @error('rw') is-invalid @enderror" id="rw"
-                                    value="{{ old('rw') }}" />
+                                    value="{{ $rw }}" />
                                 @error('rw')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -350,7 +349,7 @@
                             <div class="col">
                                 <input type="text" name="desa"
                                     class="form-control @error('desa') is-invalid @enderror" id="desa"
-                                    value="{{ old('desa') }}" />
+                                    value="{{ $desa }}" />
                                 @error('desa')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -382,7 +381,7 @@
                                     <div class="col">
                                         <input type="text" name="kecamatan"
                                             class="form-control @error('kecamatan') is-invalid @enderror" id="kecamatan"
-                                            value="{{ old('kecamatan') }}" />
+                                            value="{{ $kecamatan }}" />
                                         @error('kecamatan')
                                             <div class="invalid-feedback">
                                                 {{ $message }}
@@ -415,7 +414,7 @@
                             <div class="col">
                                 <input type="number" name="kk"
                                     class="form-control @error('kk') is-invalid @enderror" id="kk"
-                                    value="{{ old('kk') }}" />
+                                    value="{{ $kartuMonitoring->kk }}" />
                                 @error('kk')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -439,7 +438,7 @@
                             <div class="col">
                                 <input type="number" name="ktp"
                                     class="form-control @error('ktp') is-invalid @enderror" id="ktp"
-                                    value="{{ old('ktp') }}" />
+                                    value="{{ $kartuMonitoring->ktp }}" />
                                 @error('ktp')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -463,7 +462,7 @@
                             <div class="col">
                                 <input type="number" name="akta"
                                     class="form-control @error('akta') is-invalid @enderror" id="akta"
-                                    value="{{ old('akta') }}" />
+                                    value="{{ $kartuMonitoring->akta }}" />
                                 @error('akta')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -487,7 +486,7 @@
                             <div class="col">
                                 <input type="number" name="skp_skpd"
                                     class="form-control @error('skp_skpd') is-invalid @enderror" id="skp_skpd"
-                                    value="{{ old('skp_skpd') }}" />
+                                    value="{{ $kartuMonitoring->skp_skpd }}" />
                                 @error('skp_skpd')
                                     <div class="invalid-feedback">
                                         {{ $message }}
@@ -516,56 +515,56 @@
                             <div class="row mt-4">
                                 <div class="col-sm-5">
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[kk_lama]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[kk_lama]" {{ optional(optional($kartuMonitoring->petugas_pelayanan))->kk_lama ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="kk_lama" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             KK Lama
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[photo_berwarna]" class="form-check-input"
+                                        <input name="petugas_pelayanan[photo_berwarna]" {{ optional(optional($kartuMonitoring->petugas_pelayanan))->photo_berwarna ? 'checked' : '' }} class="form-check-input"
                                             type="checkbox" value="photo_berwarna" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             Photo Berwarna
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[skp]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[skp]" {{ optional(optional($kartuMonitoring->petugas_pelayanan))->skp ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="skp" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             SKP
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[skpd]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[skpd]" {{ optional($kartuMonitoring->petugas_pelayanan)->skpd ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="skpd" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             SKPD
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[fc_surat_nikah]" class="form-check-input"
+                                        <input name="petugas_pelayanan[fc_surat_nikah]" {{ optional($kartuMonitoring->petugas_pelayanan)->fc_surat_nikah ? 'checked' : '' }} class="form-check-input"
                                             type="checkbox" value="fc_surat_nikah" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             Fc. Surat Nikah
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[fc_kk]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[fc_kk]" {{ optional($kartuMonitoring->petugas_pelayanan)->fc_kk ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="fc_kk" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             Fc. KK
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[fc_ktp]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[fc_ktp]" {{ optional($kartuMonitoring->petugas_pelayanan)->fc_ktp ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="fc_ktp" id="flexCheckChecked" />
                                         <label class="form-check-label" for="flexCheckChecked">
                                             Fc. KTP
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[fc_akta_kelahiran]" class="form-check-input"
+                                        <input name="petugas_pelayanan[fc_akta_kelahiran]" {{ optional($kartuMonitoring->petugas_pelayanan)->fc_akta_kelahiran ? 'checked' : '' }} class="form-check-input"
                                             type="checkbox" value="fc_akta_kelahiran" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             Fc. Akta Kelahiran
@@ -574,49 +573,49 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[f1_01]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[f1_01]" {{ optional($kartuMonitoring->petugas_pelayanan)->f1_01 ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="f1_01" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             F-1.01 <small>(form. Biodata penduduk WNI)</small>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[f1_15]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[f1_15]" {{ optional($kartuMonitoring->petugas_pelayanan)->f1_15 ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="f1_15" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             F-1.15 <small>(KK baru)</small>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[f1_16]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[f1_16]" {{ optional($kartuMonitoring->petugas_pelayanan)->f1_16 ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="f1_16" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             F-1.16 <small>Perubahan KK</small>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[f1_21]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[f1_21]" {{ optional($kartuMonitoring->petugas_pelayanan)->f1_21 ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="f1_21" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             F-1.21 (KTP)
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[f2_01]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[f2_01]" {{ optional($kartuMonitoring->petugas_pelayanan)->f2_01 ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="f2_01" id="flexCheckDefault" />
                                         <label class="form-check-label" for="flexCheckDefault">
                                             F-2.01 <small>(Surat Keterangan Kelahiran)</small>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[f2_29]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[f2_29]" {{ optional($kartuMonitoring->petugas_pelayanan)->f2_29 ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="f2_29" id="flexCheckChecked" />
                                         <label class="form-check-label" for="flexCheckChecked">
                                             F-2.29 <small>(Surat Ket. Kematian)</small>
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input name="petugas_pelayanan[f2_38]" class="form-check-input" type="checkbox"
+                                        <input name="petugas_pelayanan[f2_38]" {{ optional($kartuMonitoring->petugas_pelayanan)->f2_38 ? 'checked' : '' }} class="form-check-input" type="checkbox"
                                             value="f2_38" id="flexCheckChecked" />
                                         <label class="form-check-label" for="flexCheckChecked">
                                             F-2.38 <small>(Pengakuan Anak)</small>
@@ -638,7 +637,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_pelayanan[nama]" type="text"
-                                                        class="form-control " id="petugas_pelayanan[nama]" />
+                                                        class="form-control " id="petugas_pelayanan[nama]" value="{{ $kartuMonitoring->petugas_pelayanan->nama}}" />
                                                 </div>
                                             </div>
                                         </div>
@@ -655,7 +654,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_pelayanan[tanggal]" type="date"
-                                                        class="form-control " id="petugas_pelayanan[tanggal]" />
+                                                        class="form-control " id="petugas_pelayanan[tanggal]" value="{{ $kartuMonitoring->petugas_pelayanan->tanggal  }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -672,7 +671,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_pelayanan[jam_masuk]" type="time"
-                                                        class="form-control " id="petugas_pelayanan[tanggal]" />
+                                                        class="form-control " id="petugas_pelayanan[tanggal]" value="{{ $kartuMonitoring->petugas_pelayanan->jam_masuk }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -689,7 +688,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_pelayanan[jam_keluar]" type="time"
-                                                        class="form-control " id="hp" />
+                                                        class="form-control " id="hp" value="{{ $kartuMonitoring->petugas_pelayanan->jam_keluar }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -720,7 +719,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_ktp[nama]" type="text" class="form-control "
-                                                        id="opk_ktp[nama]" />
+                                                        id="opk_ktp[nama]" value="{{ $kartuMonitoring->operator_komputer_ktp->nama }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -737,7 +736,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_ktp[tanggal]" type="date" class="form-control "
-                                                        id="opk_ktp[hari_tgl]" />
+                                                        id="opk_ktp[hari_tgl]" value="{{ $kartuMonitoring->operator_komputer_ktp->tanggal }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -754,7 +753,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_ktp[jam_masuk]" type="time" class="form-control "
-                                                        id="opk_ktp[jam_masuk]" />
+                                                        id="opk_ktp[jam_masuk]" value="{{ $kartuMonitoring->operator_komputer_ktp->jam_masuk }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -771,7 +770,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_ktp[jam_keluar]" type="time"
-                                                        class="form-control " id="opk_ktp[jam_keluar]" />
+                                                        class="form-control " id="opk_ktp[jam_keluar]" value="{{ $kartuMonitoring->operator_komputer_ktp->jam_keluar }}" />
                                                 </div>
                                             </div>
                                         </div>
@@ -804,7 +803,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_akta[nama]" type="text" class="form-control "
-                                                        id="opk_akta[nama]" />
+                                                        id="opk_akta[nama]" value="{{ $kartuMonitoring->operator_komputer_akta->nama }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -821,7 +820,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_akta[tanggal]" type="date" class="form-control "
-                                                        id="opk_akta[hari_tgl]" />
+                                                        id="opk_akta[hari_tgl]" value="{{ $kartuMonitoring->operator_komputer_akta->tanggal }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -838,7 +837,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_akta[jam_masuk]" type="time"
-                                                        class="form-control " id="opk_akta[jam_masuk]" />
+                                                        class="form-control " id="opk_akta[jam_masuk]" value="{{ $kartuMonitoring->operator_komputer_akta->jam_masuk }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -855,7 +854,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_akta[jam_keluar]" type="time"
-                                                        class="form-control " id="opk_akta[jam_keluar]" />
+                                                        class="form-control " id="opk_akta[jam_keluar]" value="{{ $kartuMonitoring->operator_komputer_akta->jam_keluar }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -888,7 +887,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="kasir[nama]" type="text" class="form-control "
-                                                        id="kasir[nama]" />
+                                                        id="kasir[nama]" value="{{ $kartuMonitoring->kasir->nama }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -905,7 +904,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="kasir[tanggal]" type="date" class="form-control "
-                                                        id="kasir[hari_tgl]" />
+                                                        id="kasir[hari_tgl]" value="{{ $kartuMonitoring->kasir->tanggal }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -922,7 +921,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="kasir[jam_masuk]" type="time" class="form-control "
-                                                        id="kasir[jam_masuk]" />
+                                                        id="kasir[jam_masuk]" value="{{ $kartuMonitoring->kasir->jam_masuk }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -939,7 +938,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="kasir[jam_keluar]" type="time" class="form-control "
-                                                        id="kasir[jam_keluar]" />
+                                                        id="kasir[jam_keluar]" value="{{ $kartuMonitoring->kasir->jam_keluar }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -970,7 +969,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_skp_skpd[nama]" type="text" class="form-control "
-                                                        id="opk_skp_skpd[nama]" />
+                                                        id="opk_skp_skpd[nama]" value="{{  $kartuMonitoring->operator_komputer_skp_skpd->nama }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -987,7 +986,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_skp_skpd[tanggal]" type="date"
-                                                        class="form-control " id="opk_skp_skpd[hari_tgl]" />
+                                                        class="form-control " id="opk_skp_skpd[hari_tgl]" value="{{  $kartuMonitoring->operator_komputer_skp_skpd->tanggal }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1004,7 +1003,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_skp_skpd[jam_masuk]" type="time"
-                                                        class="form-control " id="opk_skp_skpd[jam_masuk]" />
+                                                        class="form-control " id="opk_skp_skpd[jam_masuk]" value="{{  $kartuMonitoring->operator_komputer_skp_skpd->jam_masuk }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1021,7 +1020,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_skp_skpd[jam_keluar]" type="time"
-                                                        class="form-control " id="opk_skp_skpd[jam_keluar]" />
+                                                        class="form-control " id="opk_skp_skpd[jam_keluar]" value="{{  $kartuMonitoring->operator_komputer_skp_skpd->jam_keluar }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1054,7 +1053,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="pencatat_buku_regester[nama]" type="text"
-                                                        class="form-control " id="pencatat_buku_regester[nama]" />
+                                                        class="form-control " id="pencatat_buku_regester[nama]" value="{{ $kartuMonitoring->pencatat_buku_regester->nama  }}" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1071,7 +1070,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="pencatat_buku_regester[tanggal]" type="date"
-                                                        class="form-control " id="pencatat_buku_regester[hari_tgl]" />
+                                                        class="form-control " id="pencatat_buku_regester[hari_tgl]" value="{{ $kartuMonitoring->pencatat_buku_regester->tanggal  }}" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1088,7 +1087,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="pencatat_buku_regester[jam_masuk]" type="time"
-                                                        class="form-control " id="pencatat_buku_regester[jam_masuk]" />
+                                                        class="form-control " id="pencatat_buku_regester[jam_masuk]" value="{{ $kartuMonitoring->pencatat_buku_regester->jam_masuk  }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1105,7 +1104,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="pencatat_buku_regester[jam_keluar]" type="time"
-                                                        class="form-control " id="pencatat_buku_regester[jam_keluar]" />
+                                                        class="form-control " id="pencatat_buku_regester[jam_keluar]" value="{{ $kartuMonitoring->pencatat_buku_regester->jam_keluar  }}" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1136,7 +1135,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="spv_dokumen_kasi[nama]" type="text"
-                                                        class="form-control " id="spv_dokumen_kasi[nama]" />
+                                                        class="form-control " id="spv_dokumen_kasi[nama]" value="{{ $kartuMonitoring->supervisor_dokumen_kasi->nama  }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1153,7 +1152,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="spv_dokumen_kasi[tanggal]" type="date"
-                                                        class="form-control " id="spv_dokumen_kasi[hari_tgl]" />
+                                                        class="form-control " id="spv_dokumen_kasi[hari_tgl]" value="{{ $kartuMonitoring->supervisor_dokumen_kasi->tanggal  }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1170,7 +1169,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="spv_dokumen_kasi[jam_masuk]" type="time"
-                                                        class="form-control " id="spv_dokumen_kasi[jam_masuk]" />
+                                                        class="form-control " id="spv_dokumen_kasi[jam_masuk]" value="{{ $kartuMonitoring->supervisor_dokumen_kasi->jam_masuk  }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1187,7 +1186,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="spv_dokumen_kasi[jam_keluar]" type="time"
-                                                        class="form-control " id="spv_dokumen_kasi[jam_keluar]" />
+                                                        class="form-control " id="spv_dokumen_kasi[jam_keluar]" value="{{ $kartuMonitoring->supervisor_dokumen_kasi->jam_keluar  }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1220,7 +1219,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="spv_berkas_kasi[nama]" type="text"
-                                                        class="form-control " id="spv_berkas_kasi[nama]" />
+                                                        class="form-control " id="spv_berkas_kasi[nama]" value="{{  $kartuMonitoring->supervisor_berkas_kasi->nama  }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1237,7 +1236,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="spv_berkas_kasi[tanggal]" type="date"
-                                                        class="form-control " id="spv_berkas_kasi[hari_tgl]" />
+                                                        class="form-control " id="spv_berkas_kasi[hari_tgl]" value="{{  $kartuMonitoring->supervisor_berkas_kasi->tanggal  }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1254,7 +1253,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="spv_berkas_kasi[jam_masuk]" type="time"
-                                                        class="form-control " id="spv_berkas_kasi[jam_masuk]" />
+                                                        class="form-control " id="spv_berkas_kasi[jam_masuk]" value="{{  $kartuMonitoring->supervisor_berkas_kasi->jam_masuk  }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1271,7 +1270,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="spv_berkas_kasi[jam_keluar]" type="time"
-                                                        class="form-control " id="spv_berkas_kasi[jam_keluar]" />
+                                                        class="form-control " id="spv_berkas_kasi[jam_keluar]" value="{{  $kartuMonitoring->supervisor_berkas_kasi->jam_keluar  }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1302,7 +1301,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_distribusi[nama]" type="text"
-                                                        class="form-control " id="petugas_distribusi[nama]" />
+                                                        class="form-control " id="petugas_distribusi[nama]" value="{{  $kartuMonitoring->petugas_distribusi->nama}}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1319,7 +1318,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_distribusi[tanggal]" type="date"
-                                                        class="form-control " id="petugas_distribusi[hari_tgl]" />
+                                                        class="form-control " id="petugas_distribusi[hari_tgl]" value="{{  $kartuMonitoring->petugas_distribusi->tanggal}}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1336,7 +1335,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_distribusi[jam_masuk]" type="time"
-                                                        class="form-control " id="petugas_distribusi[jam_masuk]" />
+                                                        class="form-control " id="petugas_distribusi[jam_masuk]" value="{{  $kartuMonitoring->petugas_distribusi->jam_masuk}}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1353,7 +1352,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_distribusi[jam_keluar]" type="time"
-                                                        class="form-control " id="petugas_distribusi[jam_keluar]" />
+                                                        class="form-control " id="petugas_distribusi[jam_keluar]" value="{{  $kartuMonitoring->petugas_distribusi->jam_keluar }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1386,7 +1385,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_kk[nama]" type="text" class="form-control "
-                                                        id="opk_kk[nama]" />
+                                                        id="opk_kk[nama]" value="{{  $kartuMonitoring->operator_komputer_kk->nama }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1403,7 +1402,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_kk[tanggal]" type="date" class="form-control "
-                                                        id="opk_kk[hari_tgl]" />
+                                                        id="opk_kk[hari_tgl]" value="{{  $kartuMonitoring->operator_komputer_kk->tanggal }}" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1420,7 +1419,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_kk[jam_masuk]" type="time" class="form-control "
-                                                        id="opk_kk[jam_masuk]" />
+                                                        id="opk_kk[jam_masuk]" value="{{  $kartuMonitoring->operator_komputer_kk->jam_masuk}}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1437,7 +1436,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="opk_kk[jam_keluar]" type="time" class="form-control "
-                                                        id="opk_kk[jam_keluar]" />
+                                                        id="opk_kk[jam_keluar]" value="{{  $kartuMonitoring->operator_komputer_kk->jam_keluar }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1468,7 +1467,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="pemohon[nama]" type="text" class="form-control "
-                                                        id="pemohon[nama]" />
+                                                        id="pemohon[nama]" value="{{ $kartuMonitoring->pemohon->nama }}" />
                                                 </div>
                                             </div>
                                         </div>
@@ -1485,7 +1484,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="pemohon[tanggal]" type="date" class="form-control "
-                                                        id="pemohon[hari_tgl]" />
+                                                        id="pemohon[hari_tgl]" value="{{ $kartuMonitoring->pemohon->tanggal }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1502,7 +1501,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="pemohon[jam_masuk]" type="time" class="form-control "
-                                                        id="pemohon[jam_masuk]" />
+                                                        id="pemohon[jam_masuk]" value="{{ $kartuMonitoring->pemohon->jam_masuk }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1519,7 +1518,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="pemohon[jam_keluar]" type="time"
-                                                        class="form-control " id="pemohon[jam_keluar]" />
+                                                        class="form-control " id="pemohon[jam_keluar]" value="{{ $kartuMonitoring->pemohon->jam_keluar }}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1536,8 +1535,7 @@
                             <div class="row mt-3">
                                 <div class="col">
                                     <strong>CATATAN PENTING</strong>
-                                    <textarea name="catatan_penting[isi]" rows="9" class="form-control mt-3"
-                                        placeholder="Masukkan catatan penting"></textarea>
+                                    <textarea name="catatan_penting[isi]" rows="9" class="form-control mt-3" placeholder="Masukkan catatan penting">{{ $kartuMonitoring->catatan_penting->isi }}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -1564,7 +1562,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_arsip[nama]" type="text"
-                                                        class="form-control " id="petugas_arsip[nama]" />
+                                                        class="form-control " id="petugas_arsip[nama]" value="{{ $kartuMonitoring->petugas_arsip->nama}}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1581,7 +1579,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_arsip[tanggal]" type="date"
-                                                        class="form-control " id="petugas_arsip[hari_tgl]" />
+                                                        class="form-control " id="petugas_arsip[hari_tgl]" value="{{ $kartuMonitoring->petugas_arsip->tanggal}}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1598,7 +1596,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_arsip[jam_masuk]" type="time"
-                                                        class="form-control " id="petugas_arsip[jam_masuk]" />
+                                                        class="form-control " id="petugas_arsip[jam_masuk]" value="{{ $kartuMonitoring->petugas_arsip->jam_masuk}}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1615,7 +1613,7 @@
                                                 </div>
                                                 <div class="col">
                                                     <input name="petugas_arsip[jam_keluar]" type="time"
-                                                        class="form-control " id="petugas_arsip[jam_keluar]" />
+                                                        class="form-control " id="petugas_arsip[jam_keluar]" value="{{ $kartuMonitoring->petugas_arsip->jam_keluar}}"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -1634,12 +1632,6 @@
     <script>
         function confirmSubmission() {
             return confirm("Are you sure you want to submit the form?");
-        }
-
-        function confirmReset() {
-            if (confirm("Are you sure you want to reset the form?")) {
-                document.getElementById("kartuMonitoringForm").reset();
-            }
         }
     </script>
 @endsection

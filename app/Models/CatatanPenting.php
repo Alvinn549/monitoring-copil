@@ -9,11 +9,10 @@ class CatatanPenting extends Model
 {
     use HasFactory;
 
-    protected $fillable = ["isi"];
+    protected $fillable = ['kartu_monitoring_id', 'isi'];
 
     public function kartu_monitoring()
-{
-    return $this->belongsTo(KartuMonitoring::class);
-}
-
+    {
+        return $this->belongsTo(KartuMonitoring::class);
+    }
 }

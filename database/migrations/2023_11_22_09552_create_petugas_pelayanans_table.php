@@ -15,6 +15,7 @@ class CreatePetugasPelayanansTable extends Migration
     {
         Schema::create('petugas_pelayanans', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('kartu_monitoring_id');
             $table->string('kk_lama')->nullable();
             $table->string('photo_berwarna')->nullable();
             $table->string('skp')->nullable();
@@ -30,10 +31,10 @@ class CreatePetugasPelayanansTable extends Migration
             $table->string('f2_01')->nullable();
             $table->string('f2_29')->nullable();
             $table->string('f2_38')->nullable();
-            $table->string('nama');
-            $table->date('tanggal');
-            $table->datetime('jam_masuk');
-            $table->datetime('jam_keluar')->nullable();
+            $table->string('nama')->nullable();
+            $table->date('tanggal')->nullable();
+            $table->time('jam_masuk')->nullable();
+            $table->time('jam_keluar')->nullable();
             $table->timestamps();
         });
     }

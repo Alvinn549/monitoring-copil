@@ -10,7 +10,7 @@
             <div class="card bg-primary text-white">
                 <div class="card-body">
                     <p class="text-center">Total Monitoring</p>
-                    <p class="text-center display-5 fw-bold">534</p>
+                    <p class="text-center display-5 fw-bold">{{$totalKartuMonitoring}}</p>
                 </div>
 
             </div>

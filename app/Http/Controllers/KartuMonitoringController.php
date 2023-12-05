@@ -5,6 +5,20 @@ namespace App\Http\Controllers;
 use RealRashid\SweetAlert\Facades\Alert;
 
 use App\Models\KartuMonitoring;
+use App\Models\CatatanPenting;
+use App\Models\Kasir;
+use App\Models\OperatorKomputerAkta;
+use App\Models\OperatorKomputerKk;
+use App\Models\OperatorKomputerKtp;
+use App\Models\OperatorKomputerSkpSkpd;
+use App\Models\Pemohon;
+use App\Models\PencatatBukuRegester;
+use App\Models\PetugasArsip;
+use App\Models\PetugasDistribusi;
+use App\Models\PetugasPelayanan;
+use App\Models\SupervisorBerkasKasi;
+use App\Models\SupervisorDokumenKasi;
+
 use Illuminate\Http\Request;
 
 class KartuMonitoringController extends Controller
@@ -16,7 +30,7 @@ class KartuMonitoringController extends Controller
      */
     public function index()
     {
-        $kartuMonitorings = KartuMonitoring::all();
+        $kartuMonitorings = KartuMonitoring::orderBy('created_at', 'desc')->get();
 
         return view('dashboard.kartu-monitoring.index', compact('kartuMonitorings'));
     }
@@ -40,87 +54,6 @@ class KartuMonitoringController extends Controller
     public function store(Request $request)
     {
         // dd($request->catatan_penting);
-        if (
-            collect($request->input('petugas_pelayanan'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada petugas_pelayanan';
-        } elseif (
-            collect($request->input('opk_ktp'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada opk_ktp';
-        } elseif (
-            collect($request->input('opk_akta'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada opk_akta';
-        } elseif (
-            collect($request->input('kasir'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada kasir';
-        } elseif (
-            collect($request->input('opk_skp_skpd'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada opk_skp_skpd';
-        } elseif (
-            collect($request->input('pencatat_buku_regester'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada pencatat_buku_regester';
-        } elseif (
-            collect($request->input('spv_dokumen_kasi'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada spv_dokumen_kasi';
-        } elseif (
-            collect($request->input('spv_berkas_kasi'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada spv_berkas_kasi';
-        } elseif (
-            collect($request->input('petugas_distribusi'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada petugas_distribusi';
-        } elseif (
-            collect($request->input('opk_kk'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada opk_kk';
-        } elseif (
-            collect($request->input('pemohon'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada pemohon';
-        } elseif (
-            collect($request->input('catatan_penting'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada catatan_penting';
-        } elseif (
-            collect($request->input('petugas_arsip'))
-                ->filter()
-                ->isNotEmpty()
-        ) {
-            return 'ada petugas_arsip';
-        } else {
-            return 'kosong';
-        }
 
         $validate = $request->validate([
             'nama_lengkap' => 'required',
@@ -156,7 +89,7 @@ class KartuMonitoringController extends Controller
         $alamatString = implode(', ', $alamat);
         $tempatTanggalLahirString = implode(', ', $tempatTanggalLahir);
 
-        KartuMonitoring::create([
+        $kartuMonitoring = KartuMonitoring::create([
             'nama_lengkap' => $validate['nama_lengkap'],
             'no_hp' => $validate['no_hp'],
             'nik_pemohon' => $validate['nik_pemohon'],
@@ -172,8 +105,190 @@ class KartuMonitoringController extends Controller
             'skp_skpd' => $validate['skp_skpd'],
         ]);
 
+        CatatanPenting::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        Kasir::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        OperatorKomputerAkta::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        OperatorKomputerKk::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        OperatorKomputerKtp::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        OperatorKomputerSkpSkpd::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        Pemohon::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        PencatatBukuRegester::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        PetugasArsip::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        PetugasDistribusi::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        PetugasPelayanan::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        SupervisorBerkasKasi::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        SupervisorDokumenKasi::create([
+            'kartu_monitoring_id' => $kartuMonitoring->id,
+        ]);
+
+        if (
+            collect($request->input('petugas_pelayanan'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $petugasPelayananData = $request->input('petugas_pelayanan');
+
+            $kartuMonitoring->petugas_pelayanan->update($petugasPelayananData);
+        }
+
+        if (
+            collect($request->input('opk_ktp'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $opkKtpData = $request->input('opk_ktp');
+
+            $kartuMonitoring->operator_komputer_ktp->update($opkKtpData);
+        }
+
+        if (
+            collect($request->input('opk_akta'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $opkAktaData = $request->input('opk_akta');
+
+            $kartuMonitoring->operator_komputer_akta->update($opkAktaData);
+        }
+
+        if (
+            collect($request->input('kasir'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $kasirData = $request->input('kasir');
+
+            $kartuMonitoring->kasir->update($kasirData);
+        }
+
+        if (
+            collect($request->input('opk_skp_skpd'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $opkSkpSkpdData = $request->input('opk_skp_skpd');
+
+            $kartuMonitoring->operator_komputer_skp_skpd->update($opkSkpSkpdData);
+        }
+
+        if (
+            collect($request->input('pencatat_buku_regester'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $pencatatBukuRegesterData = $request->input('pencatat_buku_regester');
+
+            $kartuMonitoring->pencatat_buku_regester->update($pencatatBukuRegesterData);
+        }
+
+        if (
+            collect($request->input('spv_dokumen_kasi'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $supervisorDokumenKasiData = $request->input('spv_dokumen_kasi');
+
+            $kartuMonitoring->supervisor_dokumen_kasi->update($supervisorDokumenKasiData);
+        }
+
+        if (
+            collect($request->input('spv_berkas_kasi'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $supervisorBerkasKasiData = $request->input('spv_berkas_kasi');
+
+            $kartuMonitoring->supervisor_berkas_kasi->update($supervisorBerkasKasiData);
+        }
+
+        if (
+            collect($request->input('petugas_distribusi'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $petugasDistribusiData = $request->input('petugas_distribusi');
+
+            $kartuMonitoring->petugas_distribusi->update($petugasDistribusiData);
+        }
+
+        if (
+            collect($request->input('opk_kk'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $opkKkData = $request->input('opk_kk');
+
+            $kartuMonitoring->operator_komputer_kk->update($opkKkData);
+        }
+
+        if (
+            collect($request->input('pemohon'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $pemohonData = $request->input('pemohon');
+
+            $kartuMonitoring->pemohon->update($pemohonData);
+        }
+
+        if (
+            collect($request->input('catatan_penting'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $catatanPentingData = $request->input('catatan_penting');
+
+            $kartuMonitoring->catatan_penting->update($catatanPentingData);
+        }
+
+        if (
+            collect($request->input('petugas_arsip'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $petugasArsipData = $request->input('petugas_arsip');
+
+            $kartuMonitoring->petugas_arsip->update($petugasArsipData);
+        }
+
         Alert::toast(
-            '<p style="color: white; margin-top: 10px;">' . $validate['nama_lengkap'] . ' berhasil disimpan</p>',
+            '<p style="color: white; margin-top: 10px;">' . $kartuMonitoring->nama_lengkap . ' berhasil disimpan</p>',
             'success'
         )
             ->toHtml()
@@ -202,7 +317,40 @@ class KartuMonitoringController extends Controller
      */
     public function edit(KartuMonitoring $kartuMonitoring)
     {
-        //
+        $kartuMonitoring->with([
+            'petugas_pelayanan',
+            'kasir',
+            'pencatat_buku_regester',
+            'supervisor_berkas_kasi',
+            'operator_komputer_kk',
+            'operator_komputer_ktp',
+            'operator_komputer_akta',
+            'operator_komputer_skp_skpd',
+            'supervisor_dokumen_kasi',
+            'petugas_distribusi',
+            'pemohon',
+            'petugas_arsip',
+            'catatan_penting',
+        ]);
+
+        // dd($kartuMonitoring);
+
+        $ttlString = $kartuMonitoring->ttl;
+        $ttlArray = explode(', ', $ttlString);
+        $tempatLahir = $ttlArray[0];
+        $tanggalLahir = $ttlArray[1];
+
+        $alamatString = $kartuMonitoring->alamat;
+        $alamatArray = explode(', ', $alamatString);
+        $rt = $alamatArray[0];
+        $rw = $alamatArray[1];
+        $desa = $alamatArray[2];
+        $kecamatan = $alamatArray[3];
+
+        return view(
+            'dashboard.kartu-monitoring.pages.edit',
+            compact('kartuMonitoring', 'tempatLahir', 'tanggalLahir', 'rt', 'rw', 'desa', 'kecamatan')
+        );
     }
 
     /**
@@ -214,7 +362,226 @@ class KartuMonitoringController extends Controller
      */
     public function update(Request $request, KartuMonitoring $kartuMonitoring)
     {
-        //
+        // dd($request->catatan_penting);
+
+        $validate = $request->validate([
+            'nama_lengkap' => 'required',
+            'no_hp' => 'required',
+            'nik_pemohon' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
+            'tanggal' => 'required',
+            'no_antrian' => 'required',
+            'jadi_tanggal' => 'required',
+            'rt' => 'required',
+            'rw' => 'required',
+            'desa' => 'required',
+            'kecamatan' => 'required',
+            'kk' => 'required',
+            'ktp' => 'required',
+            'akta' => 'required',
+            'skp_skpd' => 'required',
+        ]);
+
+        $alamat = [
+            'rt' => $validate['rt'],
+            'rw' => $validate['rw'],
+            'desa' => $validate['desa'],
+            'kecamatan' => $validate['kecamatan'],
+        ];
+
+        $tempatTanggalLahir = [
+            'tempat_lahir' => $validate['tempat_lahir'],
+            'tanggal_lahir' => $validate['tanggal_lahir'],
+        ];
+
+        $alamatString = implode(', ', $alamat);
+        $tempatTanggalLahirString = implode(', ', $tempatTanggalLahir);
+
+        $kartuMonitoring->update([
+            'nama_lengkap' => $validate['nama_lengkap'],
+            'no_hp' => $validate['no_hp'],
+            'nik_pemohon' => $validate['nik_pemohon'],
+            'ttl' => $tempatTanggalLahirString,
+            'tanggal' => $validate['tanggal'],
+            'no_antrian' => $validate['no_antrian'],
+            'jadi_tanggal' => $validate['jadi_tanggal'],
+            'alamat' => $alamatString,
+            'kecamatan' => $validate['kecamatan'],
+            'kk' => $validate['kk'],
+            'ktp' => $validate['ktp'],
+            'akta' => $validate['akta'],
+            'skp_skpd' => $validate['skp_skpd'],
+        ]);
+
+        // dd($kartuMonitoring->id);
+
+        if (
+            collect($request->input('petugas_pelayanan'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $petugasPelayananData = $request->input('petugas_pelayanan');
+
+            // dd($petugasPelayananData);
+
+            $kartuMonitoring->petugas_pelayanan->update($petugasPelayananData);
+
+            // dd($createPetugasPelayanan);
+        }
+
+        if (
+            collect($request->input('opk_ktp'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $opkKtpData = $request->input('opk_ktp');
+
+            // dd($opkKtpData);
+            $kartuMonitoring->operator_komputer_ktp->update($opkKtpData);
+        }
+
+        if (
+            collect($request->input('opk_akta'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $opkAktaData = $request->input('opk_akta');
+
+            // dd($opkAkta);
+
+            $kartuMonitoring->operator_komputer_akta->update($opkAktaData);
+        }
+
+        if (
+            collect($request->input('kasir'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $kasirData = $request->input('kasir');
+
+            // dd($opkAkta);
+
+            $kartuMonitoring->kasir->update($kasirData);
+        }
+
+        if (
+            collect($request->input('opk_skp_skpd'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $opkSkpSkpdData = $request->input('opk_skp_skpd');
+
+            // dd($opkAkta);
+
+            $kartuMonitoring->operator_komputer_skp_skpd->update($opkSkpSkpdData);
+        }
+
+        if (
+            collect($request->input('pencatat_buku_regester'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $pencatatBukuRegesterData = $request->input('pencatat_buku_regester');
+
+            // dd($opkAkta);
+
+            $kartuMonitoring->pencatat_buku_regester->update($pencatatBukuRegesterData);
+        }
+
+        if (
+            collect($request->input('spv_dokumen_kasi'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $supervisorDokumenKasiData = $request->input('spv_dokumen_kasi');
+
+            // dd($opkAkta);
+
+            $kartuMonitoring->supervisor_dokumen_kasi->update($supervisorDokumenKasiData);
+        }
+
+        if (
+            collect($request->input('spv_berkas_kasi'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $supervisorBerkasKasiData = $request->input('spv_berkas_kasi');
+
+            // dd($opkAkta);
+
+            $kartuMonitoring->supervisor_berkas_kasi->update($supervisorBerkasKasiData);
+        }
+
+        if (
+            collect($request->input('petugas_distribusi'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $petugasDistribusiData = $request->input('petugas_distribusi');
+
+            // dd($opkAkta);
+
+            $kartuMonitoring->petugas_distribusi->update($petugasDistribusiData);
+        }
+
+        if (
+            collect($request->input('opk_kk'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $opkKkData = $request->input('opk_kk');
+
+            // dd($opkAkta);
+
+            $kartuMonitoring->operator_komputer_kk->update($opkKkData);
+        }
+
+        if (
+            collect($request->input('pemohon'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $pemohonData = $request->input('pemohon');
+
+            // dd($opkAkta);
+
+            $kartuMonitoring->pemohon->update($pemohonData);
+        }
+
+        if (
+            collect($request->input('catatan_penting'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $catatanPentingData = $request->input('catatan_penting');
+
+            // dd($catatanPentingData);
+
+            $kartuMonitoring->catatan_penting->update($catatanPentingData);
+        }
+
+        if (
+            collect($request->input('petugas_arsip'))
+                ->filter()
+                ->isNotEmpty()
+        ) {
+            $petugasArsipData = $request->input('petugas_arsip');
+
+            // dd($petugasArsipData);
+
+            $kartuMonitoring->petugas_arsip->update($petugasArsipData);
+        }
+
+        Alert::toast(
+            '<p style="color: white; margin-top: 10px;">' . $kartuMonitoring->nama_lengkap . ' berhasil dirubah</p>',
+            'success'
+        )
+            ->toHtml()
+            ->background('#212529')
+            ->position($position = 'bottom-right');
+
+        return redirect()->route('kartu-monitoring.index');
     }
 
     /**

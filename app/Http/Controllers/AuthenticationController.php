@@ -9,27 +9,25 @@ use RealRashid\SweetAlert\Facades\Alert;
 class AuthenticationController extends Controller
 {
     public function authenticate(Request $request)
-    { 
-
+    {
         $credentials = $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
         if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
 
-           $request->session()->regenerate();
+            Alert::success('LOGIN BERHASIL', 'Sebagai ' . auth()->user()->name);
 
-           Alert::success('LOGIN BERHASIL', 'Sebagai '.auth()->user()->username);
-
-           return redirect()->intended('dashboard');
+            return redirect()->intended('dashboard');
         }
 
-       Alert::warning('LOGIN GAGAL', 'Silahkan periksa kembali username atau password anda !');
-       return back();
-   }
-   public function logout(Request $request)
-   {
+        Alert::warning('LOGIN GAGAL', 'Silahkan periksa kembali username atau password anda !');
+        return back();
+    }
+    public function logout(Request $request)
+    {
         Auth::logout();
 
         $request->session()->invalidate();

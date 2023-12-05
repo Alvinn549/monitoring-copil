@@ -10,6 +10,7 @@ class PetugasPelayanan extends Model
     use HasFactory;
 
     protected $fillable = [
+        'kartu_monitoring_id',
         'kk_lama',
         'photo_berwarna',
         'skp',
